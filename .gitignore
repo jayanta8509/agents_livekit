@@ -166,3 +166,7 @@ node_modules
 
 credentials.json
 pyrightconfig.json
+
+
+/oldenv.txt
+

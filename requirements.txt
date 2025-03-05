@@ -6,3 +6,5 @@ livekit-plugins-silero>=0.7.4
 livekit-plugins-rag>=0.2.3
 python-dotenv~=1.0
 aiofile~=3.8.8
+fastapi
+uvicorn

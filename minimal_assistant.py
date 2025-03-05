@@ -22,7 +22,7 @@ logger = logging.getLogger("voice-assistant")
 def prewarm(proc: JobProcess):
     proc.userdata["vad"] = silero.VAD.load()
 
-
+voice_name = 'onyx'
 async def entrypoint(ctx: JobContext):
     initial_ctx = llm.ChatContext().append(
         role="system",
@@ -45,7 +45,7 @@ async def entrypoint(ctx: JobContext):
         llm=openai.LLM(),
         # llm=openai.LLM.with_ollama(model = 'dolphin-mistral:7b',base_url = 'https://2eqtj23fr9q0b5-11434.proxy.runpod.net/v1'),
 
-        tts=openai.TTS(),  # Using OpenAI's TTS
+        tts=openai.TTS(voice=voice_name),  # Using OpenAI's TTS
         chat_ctx=initial_ctx,
     )
 
